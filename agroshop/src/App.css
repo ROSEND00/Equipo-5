@@ -1,38 +1,199 @@
 .App {
   text-align: center;
+  background-color: cadetblue;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.menu {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 20px;
+  flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
+.square {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.red {
+  background-color: rgb(121, 3, 3);
+  content: "Nosotros";
+}
+
+.blue {
+  background-color: rgb(1, 1, 99);
+}
+
+.green {
+  background-color: rgb(2, 88, 2);
+}
+
+.yellow {
+  background-color: rgb(110, 110, 1);
+}
+
+h1 {
+
+  color: rgb(0, 4, 7);
+
+}
+
+h2 {
+
+  color: brown;
+  text-align: center;
+
+}
+
+@media (max-width: 480px) {
+  .menu {
+    flex-direction: column; /* switch to a vertical layout */
+    align-items: center; /* center the menu items vertically */
   }
-  to {
-    transform: rotate(360deg);
+  .square {
+    width: 100%; /* make the menu items full-width */
+    margin: 10px 0; /* adjust the margin to create space between items */
   }
 }
+
+@media (max-width: 480px) {
+  .menu {
+    font-size: 0.8em; /* reduce the font size to fit more items on the screen */
+  }
+  .square {
+    height: 150px; /* reduce the height of the menu items to fit more on the screen */
+  }
+}
+
+.square h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff; /* color del texto */
+  font-size: 20px; /* tamaño del texto */
+}
+
+.red h2::before {
+  content: "Nosotros";
+}
+
+.blue h2::before {
+  content: "Productos";
+}
+
+.green h2::before {
+  content: "Carrito";
+}
+
+.yellow h2::before {
+  content: "Contacto";
+}
+
+.square img {
+  width: 100%; /* ajustar el ancho de la imagen al ancho del cuadro */
+  height: 100%; /* ajustar el alto de la imagen al alto del cuadro */
+  object-fit: cover; /* ajustar la imagen para que se ajuste al tamaño del cuadro */
+  border-radius: 10px; /* agregar un borde redondeado a la imagen */
+}
+
+/* Estilos para el catálogo de productos */
+
+.productos {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  max-width: 1200px; /* ajustar el ancho máximo del catálogo */
+  margin: 40px auto; /* centrar horizontalmente */
+  padding: 25px; /* agregar padding para separar del borde */
+  background-color: #fff; /* agregar fondo blanco para destacar el catálogo */
+  border: 2px solid #ddd; /* agregar borde para dar forma al catálogo */
+  border-radius: 10px; /* agregar esquinas redondeadas */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* agregar sombra para dar profundidad */
+}
+
+.productos ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.productos li {
+  display: table-row;
+  border-bottom: 1px solid #ccc;
+}
+
+.productos li:last-child {
+  border-bottom: none;
+}
+
+.productos img {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.productos h3 {
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.productos p {
+  margin: 10px 0;
+}
+
+.productos p.precio {
+  font-weight: bold;
+  color: #666;
+}
+
+/* Estilos para pantalla grande */
+@media (min-width: 1200px) {
+  .productos li {
+    width: 25%;
+    float: left;
+    margin: 10px;
+  }
+  .productos img {
+    width: 100%;
+    height: 150px;
+  }
+}
+
+/* Estilos para pantalla mediana */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .productos li {
+    width: 33.33%;
+    float: left;
+    margin: 10px;
+  }
+  .productos img {
+    width: 100%;
+    height: 100px;
+  }
+}
+
+/* Estilos para pantalla pequeña */
+@media (max-width: 550px) {
+  .productos li {
+    width: 100%;
+    float: left;
+    margin: 10px;
+    text-align: center;
+    
+    
+  }
+  .productos img {
+    width: 100%;
+    height: 50px;
+  }
+
+  
+} 
+
