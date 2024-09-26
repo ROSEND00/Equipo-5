@@ -19,5 +19,4 @@ RUN BACKGROUND npm start || python3 -m http.server 3000
 # Every time someone clicks the link, we'll wake up this staging server.
 EXPOSE WEBSITE http://localhost:3000
 
-SECRET ENV my_secret
-RUN echo "secret is: $my_secret"
+
