@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 
+import { initMercadoPago } from '@mercadopago/sdk-react'
+initMercadoPago('APP_USR-b1f04e74-b2f1-4acb-b03c-e25515dd5392');
+
+
+
 const productos = [
   {
     id: 1,
