@@ -1,77 +1,92 @@
 import React, { useState } from 'react';
 
-import { initMercadoPago } from '@mercadopago/sdk-react'
-initMercadoPago('APP_USR-b1f04e74-b2f1-4acb-b03c-e25515dd5392');
-
-
-
 const productos = [
   {
     id: 1,
-    nombre: 'Producto 1',
-    descripcion: 'Descripción del producto 1',
-    precio: 10.99,
-    imagen: 'https://example.com/producto1.jpg'
+    nombre: 'Engeo de 1Lt.',
+    descripcion: 'ENGEO® Producto de amplio espectro que controla masticadores, chupadores y raspadores. Insecticida de acción de contacto y con propiedades sistémicas. Moderna formulación, contiene micro cápsulas de lambdacialotrina combinada con tiametoxam formulada en una suspensión concentrada.',
+    precio: 250.00,
+    imagen: 'https://cdn11.bigcommerce.com/s-xeihv17pvg/images/stencil/1920w/products/1583/3689/Syngenta-Engeo_247_Ec_1_Lt-Frontal__56765.1722014125.png'
   },
   {
     id: 2,
-    nombre: 'Producto 2',
-    descripcion: 'Descripción del producto 2',
-    precio: 9.99,
-    imagen: 'https://example.com/producto2.jpg'
+    nombre: 'Karate Zeon de 1 LT',
+    descripcion: 'KARATE ZEON® 5 CS es un insecticida altamente activo a bajas dosis, rápida acción. Amplio espectro de control de plagas. Efecto Inmediato.',
+    precio: 1200.00,
+    imagen: 'https://mazorca.mx/wp-content/uploads/2021/11/la-mazorca-syngenta-KARATE-ZEON.jpg'
   },
   {
     id: 3,
-    nombre: 'Producto 3',
-    descripcion: 'Descripción del producto 3',
-    precio: 12.99,
-    imagen: 'https://example.com/producto3.jpg'
+    nombre: 'Match de 1lt',
+    descripcion: 'Match® tiene bajo impacto sobre insectos benéficos o enemigos naturales, por lo que es recomendable para programas de Manejo Integrado de Plagas (MIP), principalmente en áreas donde las plagas son resistentes a organofosforados, piretroides y otros modos de acción',
+    precio: 950.80,
+    imagen: 'https://acdn.mitiendanube.com/stores/001/016/872/products/9-c56afd5e800f10ded217273692761420-640-0.png'
   },
   {
     id: 4,
-    nombre: 'Producto 4',
-    descripcion: 'Descripción del producto 4',
-    precio: 8.99,
-    imagen: 'https://example.com/producto4.jpg'
+    nombre: 'Primagram Gold de 1 lt',
+    descripcion: 'PRIMAGRAM® GOLD es una mezcla de dos ingredientes activos: atrazina y s-metolaclor, que combinados, ejercen acción contra las malezas',
+    precio: 300.00,
+    imagen: 'https://http2.mlstatic.com/D_Q_NP_678806-MLM72887284637_112023-AB.webp'
   },
+  
   {
     id: 5,
-    nombre: 'Producto 5',
-    descripcion: 'Descripción del producto 5',
-    precio: 11.99,
-    imagen: 'https://example.com/producto5.jpg'
+    nombre: 'Coloso Total de 1 Lt.',
+    descripcion: 'Por ser un herbicida sistémico requiere que la maleza esté en activo crecimiento para obtener el control adecuado. Coloso® Total 360 se absorbe por las hojas y se transloca hasta las raíces y otras partes de las plantas',
+    precio: 435.00,
+    imagen: 'https://mazorca.mx/wp-content/uploads/2021/11/la-mazorca-syngenta-COLOSO-TOTAL.jpg'
   },
+
+  {
+    id: 6,
+    nombre: 'Semilla de Maíz P3966W',
+    descripcion: 'Combina rusticidad y rendimiento en condiciones difíciles, Tolerancia a enfermedades foliares, Alto rendimiento de forraje de buena calidad, Excelente daptacion a manejo con agua de presa',
+    precio: 4350.00,
+    imagen: 'https://www.agricenter.com.mx/sistema/images/products/76/BEWtn5GrmdJJbd0yeePnGuumHNi6Tp2L08g4at0t.png'
+  },
+
+  // Agregar más productos aquí
 ];
 
-function Productos() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [filteredProducts, setFilteredProducts] = useState(productos);
+const ProductosList = () => {
+  const [productosCarrito, setProductosCarrito] = useState([]); // Estado para almacenar los productos agregados al carrito
 
-  const handleSearch = (e) => {
-    const searchTerm = e.target.value.toLowerCase();
-    setSearchTerm(searchTerm); // Asignar el nuevo valor a searchTerm
-    const filteredProducts = productos.filter((product) => {
-      return product.nombre.toLowerCase().includes(searchTerm) || product.descripcion.toLowerCase().includes(searchTerm);
-    });
-    setFilteredProducts(filteredProducts);
+  const agregarAlCarrito = (producto) => {
+    setProductosCarrito([...productosCarrito, producto]); // Agregar el producto al carrito
+    localStorage.setItem('productosCarrito', JSON.stringify([...productosCarrito, producto])); // Guardar el producto en el localStorage
   };
 
   return (
-    <div className="productos">
+    <div>
+      <div className="titulo-productos">
       <h2>Productos</h2>
-      <input type="search" value={searchTerm} onChange={handleSearch} placeholder="Buscar producto" />
-      <ul>
-        {filteredProducts.map((product) => (
-          <li key={product.id}>
-            <img src={product.imagen} alt={product.nombre} />
-            <h3>{product.nombre}</h3>
-            <p>{product.descripcion}</p>
-            <p className="precio">Precio: {product.precio}</p>
-          </li>
+      </div>
+      <table>
+      <thead>
+          <tr>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Agregar al carrito</th>
+          </tr>
+        </thead>
+        <tbody>
+        {productos.map((producto) => (
+          <tr key={producto.id}>
+            <td><img src={producto.imagen} alt={producto.nombre} width="100px"/></td>
+            <td><h3>{producto.nombre}</h3></td>
+            <td><p>{producto.descripcion}</p></td>
+            <td><p>Precio: ${producto.precio}</p></td>
+            <td><button onClick={() => agregarAlCarrito(producto)}>Agregar al carrito</button></td>
+          
+          </tr>
         ))}
-      </ul>
+        </tbody>
+      </table>
     </div>
   );
-}
+};
 
-export default Productos;
+export default ProductosList;

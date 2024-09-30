@@ -133,8 +133,8 @@ h2 {
 }
 
 .productos img {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   margin: 10px;
   border-radius: 10px;
 }
@@ -156,13 +156,15 @@ h2 {
 /* Estilos para pantalla grande */
 @media (min-width: 1200px) {
   .productos li {
-    width: 25%;
+    width: 30%;
     float: left;
     margin: 10px;
   }
   .productos img {
-    width: 100%;
-    height: 150px;
+    max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
   }
 }
 
@@ -174,8 +176,10 @@ h2 {
     margin: 10px;
   }
   .productos img {
-    width: 100%;
-    height: 100px;
+    max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
   }
 }
 
@@ -190,10 +194,163 @@ h2 {
     
   }
   .productos img {
-    width: 100%;
-    height: 50px;
+    max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
   }
 
   
 } 
 
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+
+td img {
+  width: 100px;
+  height: auto;
+}
+
+button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 7px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  table {
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 5px;
+  }
+
+  td img {
+    width: 80px;
+    height: auto;
+  }
+
+  .button-agregar {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  table {
+    font-size: 12px;
+  }
+
+  th, td {
+    padding: 2px;
+  }
+
+  td img {
+    width: 60px;
+    height: auto;
+  }
+
+  .button-agregar {
+    padding: 2px 5px;
+    font-size: 12px;
+  }
+}
+
+.carrito-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.carrito-table th, .carrito-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.carrito-table th {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.carrito-table td {
+  vertical-align: middle;
+}
+
+.carrito-table td img {
+  width: 100px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .carrito-table {
+    font-size: 14px;
+  }
+
+  .carrito-table th, .carrito-table td {
+    padding: 5px;
+  }
+
+  .carrito-table td img {
+    width: 80px;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .carrito-table {
+    font-size: 12px;
+  }
+
+  .carrito-table th, .carrito-table td {
+    padding: 2px;
+  }
+
+  .carrito-table td img {
+    width: 60px;
+    height: auto;
+  }
+}
+
+.titulo-productos {
+  background-image: url('https://cdn.pixabay.com/photo/2014/09/09/19/07/corn-field-440338_1280.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+
+.titulo-carrito {
+  background-image: url('https://cdn.pixabay.com/photo/2020/05/21/06/58/corn-5199393_1280.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
