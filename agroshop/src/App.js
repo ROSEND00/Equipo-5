@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
 import { NavLink } from 'react-router-dom';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 function App() {
   return (
     <div className="App">
-      <h1>AgroShop</h1>
+      <h1><img src="https://i.postimg.cc/MGcGmYcj/Logo-App.png" alt="Logo de la aplicación"/></h1>
       <h2>Bienvenidos</h2>
       <div className="menu">
   <NavLink to="/nosotros">
