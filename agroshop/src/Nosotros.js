@@ -6,6 +6,23 @@ function Nosotros() {
       <div className="hero">
         <h2 className="title">Nosotros</h2>
         <img src="https://i.postimg.cc/Mp2pWJpq/agricultural-landscape-1500x500.png" alt="Imagen de fondo" />
+        <div className="menu">
+          <a href="/" className="menu-item">
+            <i className="fa fa-home fa-lg"></i> Inicio
+          </a>
+          <a href="/nosotros" className="menu-item">
+            <i className="fa fa-users fa-lg"></i> Nosotros
+          </a>
+          <a href="/productos" className="menu-item">
+            <i className="fa fa-shopping-cart fa-lg"></i> Productos
+          </a>
+          <a href="/carrito" className="menu-item">
+            <i className="fa fa-cart-plus fa-lg"></i> Carrito
+          </a>
+          <a href="/contacto" className="menu-item">
+            <i className="fa fa-envelope fa-lg"></i> Contacto
+          </a>
+        </div>
       </div>
       <div className="description-container">
         <h3>Descripción</h3>

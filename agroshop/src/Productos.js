@@ -91,6 +91,23 @@ const ProductosList = () => {
       <a href="/carrito" className="carrito-icono">
     <i className="fas fa-shopping-cart"></i>
   </a>
+  <div className="menu">
+          <a href="/" className="menu-item">
+            <i className="fa fa-home fa-lg"></i> Inicio
+          </a>
+          <a href="/nosotros" className="menu-item">
+            <i className="fa fa-users fa-lg"></i> Nosotros
+          </a>
+          <a href="/productos" className="menu-item">
+            <i className="fa fa-shopping-cart fa-lg"></i> Productos
+          </a>
+          <a href="/carrito" className="menu-item">
+            <i className="fa fa-cart-plus fa-lg"></i> Carrito
+          </a>
+          <a href="/contacto" className="menu-item">
+            <i className="fa fa-envelope fa-lg"></i> Contacto
+          </a>
+        </div>
       </div>
       <div style={{marginTop: '50px'}}>
       <table className="productos-table">

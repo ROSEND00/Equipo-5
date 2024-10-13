@@ -3,7 +3,7 @@
   background-color: cadetblue;
 }
 
-.menu {
+.menu_principal {
   display: flex;
   justify-content: center;
   margin-top: 20px;
@@ -54,7 +54,7 @@ h2 {
 
 @media (max-width: 480px) {
   .menu {
-    flex-direction: column; /* switch to a vertical layout */
+    /*flex-direction: column; *//* switch to a vertical layout */
     align-items: center; /* center the menu items vertically */
   }
   .square {
@@ -96,6 +96,14 @@ h2 {
 
 .yellow h2::before {
   content: "Contacto";
+}
+
+.gris h2::before {
+  content: "Academy";
+}
+
+.morado h2::before {
+  content: "Empleo";
 }
 
 .square img {
@@ -543,4 +551,38 @@ h1 img {
 .vision-container p {
   font-size: 18px;
   margin-bottom: 20px;
+}
+
+/* Estilos para el menú */
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ccc;
+}
+
+.menu-item {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+.menu-item:hover {
+  color: #007bff;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery img {
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  border: 0px solid #ddd;
+  border-radius: 10px;
 }

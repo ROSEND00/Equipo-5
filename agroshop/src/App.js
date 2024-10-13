@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <h1><img src="https://i.postimg.cc/MGcGmYcj/Logo-App.png" alt="Logo de la aplicación"/></h1>
       <h2>Bienvenidos</h2>
-      <div className="menu">
+      <div className="menu_principal">
   <NavLink to="/nosotros">
     <div className="square red">
     <img src="https://cdn.pixabay.com/photo/2020/03/23/00/45/coffee-4958997_1280.jpg" alt="" />
@@ -34,8 +34,29 @@ function App() {
     <h2></h2>
     </div>
   </NavLink>
-</div>
+  <NavLink to="/academy">
+    <div className="square gris">
+    <img src="https://cdn.pixabay.com/photo/2020/11/08/03/05/rice-5722754_1280.jpg" alt="" />
+    <h2></h2>
     </div>
+  </NavLink>
+  <NavLink to="/empleo">
+    <div className="square morado">
+    <img src="https://cdn.pixabay.com/photo/2021/08/19/08/35/handshake-6557378_1280.jpg" alt="" />
+    <h2></h2>
+    </div>
+  </NavLink>
+</div>
+<h3>Nuestros Socios Comerciales</h3>
+      <div className="gallery">
+        <img src="https://i.postimg.cc/3RqK5kBZ/pngwing-com.png" alt="Socio 1" />
+        <img src="https://i.postimg.cc/d3vDSktS/klipartz-com-5.png" alt="Socio 2" />
+        <img src="https://i.postimg.cc/GmyngvXL/klipartz-com-6.png" alt="Socio 3" />
+        <img src="https://i.postimg.cc/MZMxNkPb/klipartz-com-7.png" alt="Socio 4" />
+        <img src="https://i.postimg.cc/kGJJRwPM/klipartz-com-9.png" alt="Socio 5" />
+      </div>
+    </div>
+    
   );
 }
 

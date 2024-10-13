@@ -1,0 +1,196 @@
+.contacto-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .titulo-contacto {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .imagen-titulo {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .informacion {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mapa-ubicacion {
+    margin-bottom: 20px;
+  }
+  
+  .mapa-ubicacion iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 10px;
+  }
+  
+  .formulario-contacto {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .formulario-contacto label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .formulario-contacto input {
+    width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  
+  }
+  
+  .formulario-contacto textarea {
+    width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+ 
+  }
+
+  .formulario-contacto button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .formulario-contacto button:hover {
+    background-color: #0056b3;
+  }
+  
+  .mensajeria-instantanea {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .whatsapp-link {
+    text-decoration: none;
+  }
+  
+  .whatsapp-button {
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .whatsapp-button:hover {
+    background-color: #1DAF4B;
+  }
+  
+  @media (max-width: 768px) {
+    .contacto-container {
+      padding: 10px;
+    }
+  
+    .informacion, 
+    .formulario-contacto {
+      padding: 10px;
+    }
+  
+    .mapa-ubicacion iframe {
+      height: 200px;
+    }
+
+    .formulario-contacto input {
+    padding: 5px;
+    margin-bottom: 5px;
+    
+  }
+
+  .formulario-contacto textarea {
+    padding: 5px;
+    margin-bottom: 10px;
+    height: 80px;
+  }
+
+  }
+  
+  @media (max-width: 480px) {
+    .contacto-container {
+      padding: 5px;
+    }
+  
+    .informacion, 
+    .formulario-contacto {
+      padding: 5px;
+    }
+  
+    .mapa-ubicacion iframe {
+      height: 150px;
+    }
+
+    .formulario-contacto input {
+    padding: 3px;
+    margin-bottom: 3px;
+    
+  }
+
+  .formulario-contacto textarea {
+    padding: 3px;
+    margin-bottom: 10px;
+    height: 80px;
+  }
+  }
+
+  /* Estilos para el menú */
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ccc;
+}
+
+.menu-item {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+.menu-item:hover {
+  color: #007bff;
+}
+
+.redes-sociales {
+  margin-top: 15px;
+}
+
+.redes-item {
+  margin-right: 10px;
+  color: #000; /* Cambia el color según tu diseño */
+  text-decoration: none;
+}
+
+.redes-item:hover {
+  color: #007bff; /* Cambia el color al pasar el mouse */
+}

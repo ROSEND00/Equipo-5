@@ -5,7 +5,8 @@ import Nosotros from './Nosotros';
 import Productos from './Productos';
 import Carrito from './Carrito';
 import Contacto from './Contacto';
-
+import Academy from './academy';
+import Empleo from './empleo';
 
 function AppRouter() {
   return (
@@ -16,6 +17,8 @@ function AppRouter() {
       <Route path="/productos" element={<Productos />} />
       <Route path="/carrito" element={<Carrito />} />
       <Route path="/contacto" element={<Contacto />} />
+      <Route path="/academy" element={<Academy />} />
+      <Route path="/empleo" element={<Empleo />} />
     </Routes>
     
   );
