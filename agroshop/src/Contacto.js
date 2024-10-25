@@ -1,8 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Contacto.css'; // Asegúrate de crear un archivo CSS para los estilos
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function Contacto() {
+  useEffect(() => {
+    // Cargar el script de LiveChat
+    window.__lc = window.__lc || {};
+    window.__lc.license = 18765399; // Reemplaza con tu número de licencia
+
+    // Crear y agregar el script de LiveChat al documento
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.async = true;
+    script.src = 'https://cdn.livechatinc.com/tracking.js';
+    
+    // Agregar el script al head del documento
+    document.head.appendChild(script);
+
+    // Limpiar el efecto (opcional)
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
+
   return (
     <div className="contacto-container">
       <div className="titulo-contacto">
@@ -83,6 +104,11 @@ function Contacto() {
           </button>
         </a>
       </div>
+
+      
+      
+      
+
       <div className="redes-sociales">
     <h4>Síguenos en nuestras redes sociales:</h4>
     <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="redes-item">

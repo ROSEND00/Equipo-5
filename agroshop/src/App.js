@@ -1,10 +1,31 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import { NavLink } from 'react-router-dom';
+
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 function App() {
+  useEffect(() => {
+    // Cargar el script de LiveChat
+    window.__lc = window.__lc || {};
+    window.__lc.license = 18765399; // Reemplaza con tu número de licencia
+
+    // Crear y agregar el script de LiveChat al documento
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.async = true;
+    script.src = 'https://cdn.livechatinc.com/tracking.js';
+    
+    // Agregar el script al head del documento
+    document.head.appendChild(script);
+
+    // Limpiar el efecto (opcional)
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="App">
       <h1><img src="https://i.postimg.cc/MGcGmYcj/Logo-App.png" alt="Logo de la aplicación"/></h1>
@@ -55,6 +76,13 @@ function App() {
         <img src="https://i.postimg.cc/MZMxNkPb/klipartz-com-7.png" alt="Socio 4" />
         <img src="https://i.postimg.cc/kGJJRwPM/klipartz-com-9.png" alt="Socio 5" />
       </div>
+      <h3>Espacio Publicitario</h3>
+      <div className="video-container">
+  <video controls autoPlay muted>
+    <source src="/VIDEO_PUBLICITARIO.mp4" type="video/mp4" />
+    Tu navegador no soporta el elemento de video.
+  </video>
+</div>
     </div>
     
   );

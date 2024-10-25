@@ -1,22 +1,63 @@
 .Academy {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background-color: #f9f9f9; /* Color de fondo claro */
-    min-height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
-  }
-  
-  .Academy h1 {
-    font-size: 2.5rem; /* Tamaño del título */
-    color: #333; /* Color del texto */
-    margin-bottom: 20px; /* Espacio debajo del título */
-  }
-  
-  .Academy p {
-    font-size: 1.2rem; /* Tamaño del texto */
-    color: #666; /* Color del texto secundario */
-    text-align: center; /* Centrar el texto */
-    max-width: 800px; /* Ancho máximo del texto */
-  }
+  font-family: 'Arial', sans-serif;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 800px; /* Ancho máximo del contenedor */
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.academy_titulo {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.header-image {
+  width: 100%; /* Las imágenes del encabezado ocuparán el 100% del ancho del contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  max-width: 800px; /* Limita el ancho máximo si es necesario */
+  margin: 0 auto 10px; /* Centra la imagen */
+}
+
+.academy_sub {
+  color: #2980b9;
+  border-bottom: 2px solid #2980b9;
+  padding-bottom: 5px;
+  margin-top: 30px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: box-shadow 0.3s ease;
+}
+
+li:hover {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.course-image {
+  width: 100%; /* Las imágenes de los cursos ocuparán el 100% del ancho del contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  max-width: 800px; /* Limita el ancho máximo si es necesario */
+  margin: 10px 0; /* Espaciado superior e inferior */
+}
+
+a {
+  color: #2980b9;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
