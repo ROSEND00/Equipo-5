@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Carrito = () => {
   const [productosCarrito, setProductosCarrito] = useState([]); // Estado para almacenar los productos agregados al carrito
-
+  const navigate = useNavigate();
+  
   useEffect(() => {
     // Obtener los productos agregados al carrito desde el localStorage
     const productosCarritoStorage = localStorage.getItem('productosCarrito');
@@ -39,6 +40,12 @@ const Carrito = () => {
     localStorage.setItem('productosCarrito', JSON.stringify(productosCarritoActualizados));
   };
 
+  const total = productosCarrito.reduce((acc, producto) => acc + producto.precio * producto.cantidad, 0);
+  const numeroPedido = Math.floor(Math.random() * 1000000); // Generar un número de pedido aleatorio
+
+  const handlePagar = () => {
+    navigate('/pago', { state: { total, numeroPedido } }); // Usa navigate en lugar de history.push
+  };
 
   return (
     <div>
@@ -93,8 +100,8 @@ const Carrito = () => {
       <td colSpan="3"></td>
       <td><strong style={{ fontSize: '18px' }}>Total de productos: {productosCarrito.reduce((acc, producto) => acc + producto.cantidad, 0)}</strong></td>
       <td><strong style={{ fontSize: '18px' }}>Total: ${productosCarrito.reduce((acc, producto) => acc + producto.precio * producto.cantidad, 0)}</strong></td>
-      <td><a href="https://www.paypal.com" target="_blank" rel="noopener noreferrer">
-          <button style={{ backgroundColor: '#008000', color: '#ffffff', border: 'none', padding: '20px 30px', borderRadius: '5px' }}>Pagar</button>
+      <td><a target="_blank" rel="noopener noreferrer">
+          <button onClick={handlePagar} style={{ backgroundColor: '#008000', color: '#ffffff', border: 'none', padding: '20px 30px', borderRadius: '5px' }}>Pagar</button>
         </a></td>
     </tr>
   </tfoot>

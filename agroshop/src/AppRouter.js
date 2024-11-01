@@ -7,6 +7,7 @@ import Carrito from './Carrito';
 import Contacto from './Contacto';
 import Academy from './academy';
 import Empleo from './empleo';
+import Pago from './Pago';
 
 function AppRouter() {
   return (
@@ -19,6 +20,7 @@ function AppRouter() {
       <Route path="/contacto" element={<Contacto />} />
       <Route path="/academy" element={<Academy />} />
       <Route path="/empleo" element={<Empleo />} />
+      <Route path="/Pago" element={<Pago />} />
     </Routes>
     
   );
