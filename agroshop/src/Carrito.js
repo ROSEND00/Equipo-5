@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import Inventarios from './inventarios';
 
 const Carrito = () => {
   const [productosCarrito, setProductosCarrito] = useState([]); // Estado para almacenar los productos agregados al carrito
@@ -110,6 +111,7 @@ const Carrito = () => {
       <Link to="/productos">
     <button>Seguir comprando</button>
   </Link>
+  <Inventarios carrito={productosCarrito} />
     </div>
   );
 };

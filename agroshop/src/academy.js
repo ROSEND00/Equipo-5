@@ -10,6 +10,7 @@ function Academy() {
   });
 
   const [message, setMessage] = useState(''); // Estado para el mensaje de envío
+  const [showPopup, setShowPopup] = useState(false); // Estado para controlar el popup
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,7 +27,7 @@ function Academy() {
     .then((response) => {
       console.log('Correo enviado!', response.status, response.text);
       setMessage('¡Correo enviado con éxito!'); 
-
+      setShowPopup(true);
       // Puedes agregar un mensaje de éxito aquí
     })
     .catch((error) => {
@@ -35,6 +36,10 @@ function Academy() {
       // Puedes agregar un mensaje de error aquí
     });
 
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
   };
 
   return (
@@ -125,7 +130,15 @@ function Academy() {
         </div>
         <button type="submit" className="form-button">Enviar</button>
       </form>
-    
+      {showPopup && (
+        <div className="popup">
+          <div className="popup-content">
+            <h2>¡Bienvenido!</h2>
+            <p>Gracias por inscribirte. ¡Estamos emocionados de tenerte con nosotros!, En breve recibiras un Correo Electrónico con informacion importante.</p>
+            <button onClick={closePopup} className="popup-close-button">Cerrar</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

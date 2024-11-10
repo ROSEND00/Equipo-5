@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react';
 
-const productos = [
+
+export const productos = [
   {
     id: 1,
     nombre: 'Engeo de 1Lt.',
@@ -60,6 +61,7 @@ const productos = [
 ];
 
 const ProductosList = () => {
+  const [productosState, setProductosState] = useState(productos);
   const [productosCarrito, setProductosCarrito] = useState([]);
   const [cantidad, setCantidad] = useState({});
 
@@ -87,9 +89,10 @@ const ProductosList = () => {
       return p;
     });
 
+    setProductosState(nuevosProductos);
     setProductosCarrito(nuevosProductosCarrito);
     localStorage.setItem('productosCarrito', JSON.stringify(nuevosProductosCarrito));
-  }, [productosCarrito, cantidad]);
+  }, [productosCarrito, cantidad, productos]);
 
 
   return (
@@ -130,7 +133,7 @@ const ProductosList = () => {
     </tr>
   </thead>
   <tbody>
-  {productos.map((producto) => (
+  {productosState.map((producto) => (
   <tr key={producto.id}>
     <td><img src={producto.imagen} alt={producto.nombre} width="100px"/></td>
     <td><h3>{producto.nombre}</h3></td>
@@ -160,7 +163,9 @@ const ProductosList = () => {
 ))}
   </tbody>
 </table>
+
 </div>
+
     </div>
   );
 };

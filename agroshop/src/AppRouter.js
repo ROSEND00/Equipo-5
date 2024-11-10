@@ -8,6 +8,7 @@ import Contacto from './Contacto';
 import Academy from './academy';
 import Empleo from './empleo';
 import Pago from './Pago';
+import Inventarios from './inventarios';
 
 function AppRouter() {
   return (
@@ -21,6 +22,8 @@ function AppRouter() {
       <Route path="/academy" element={<Academy />} />
       <Route path="/empleo" element={<Empleo />} />
       <Route path="/Pago" element={<Pago />} />
+      <Route path="/inventarios" element={<Inventarios />} />
+      
     </Routes>
     
   );

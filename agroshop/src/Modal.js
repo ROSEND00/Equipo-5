@@ -27,7 +27,7 @@ const Modal = ({ isOpen, onClose, onSubmit }) => {
           </div>
           <div>
             <label>Fecha de Expiración:</label>
-            <input type="month" required />
+            <input type="month" required min={`${new Date().getFullYear()}-01`} max="2030-12" />
           </div>
           <div>
             <label>Código de Seguridad:</label>

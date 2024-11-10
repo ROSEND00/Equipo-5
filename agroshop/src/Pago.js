@@ -53,8 +53,7 @@ const Pago = () => {
     <div className="container">
       <h2 className="title">Resumen de Pago</h2>
       <p>Número de pedido: {numeroPedido}</p>
-      <p className="total">Total a pagar: ${total}</p>
-
+      <p className="total">Total a pagar: {total.toLocaleString('es-MX', { style: 'currency', currency: 'MXN' })}</p>
       <h3>Opciones de pago</h3>
       <div className="button-container">
         <button className="button" onClick={handleOpenModal}>Tarjeta de Crédito</button>
