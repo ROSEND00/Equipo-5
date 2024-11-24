@@ -6,11 +6,11 @@ function Academy() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    course: '', // Nuevo campo para el curso elegido
+    course: '',
   });
 
-  const [message, setMessage] = useState(''); // Estado para el mensaje de envío
-  const [showPopup, setShowPopup] = useState(false); // Estado para controlar el popup
+  const [message, setMessage] = useState('');
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,25 +22,37 @@ function Academy() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    emailjs.send('service_a6zlytn', 'template_xhtpaif', formData, 'P3oEfq3688bxT6zZP')
-    .then((response) => {
-      console.log('Correo enviado!', response.status, response.text);
-      setMessage('¡Correo enviado con éxito!'); 
-      setShowPopup(true);
-      // Puedes agregar un mensaje de éxito aquí
-    })
-    .catch((error) => {
-      console.error('Error al enviar el correo:', error);
-      setMessage('Error al enviar el correo. Inténtalo de nuevo.'); // Mensaje de error
-      // Puedes agregar un mensaje de error aquí
-    });
 
+    // Enviar el formulario
+    emailjs.send('service_a6zlytn', 'template_xhtpaif', formData, 'P3oEfq3688bxT6zZP')
+      .then((response) => {
+        console.log('Correo enviado!', response.status, response.text);
+        setMessage('¡Correo enviado con éxito!'); 
+        setShowPopup(true);
+
+        // Enviar correo de confirmación al usuario
+        emailjs.send('service_a6zlytn', 'template_5szzd72', {
+          to_name: formData.name,
+          to_email: formData.email,
+          course: formData.course,
+        }, 'P3oEfq3688bxT6zZP')
+        .then((response) => {
+          console.log('Correo de confirmación enviado!', response.status, response.text);
+        })
+        .catch((error) => {
+          console.error('Error al enviar el correo de confirmación:', error);
+        });
+      })
+      .catch((error) => {
+        console.error('Error al enviar el correo:', error);
+        setMessage('Error al enviar el correo. Inténtalo de nuevo.');
+      });
   };
 
   const closePopup = () => {
     setShowPopup(false);
   };
+
 
   return (
     <div className="Academy">
